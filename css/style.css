@@ -582,7 +582,7 @@ footer {
         transform: scale(1.1);
     }
     main {
-        margin: 75px;
+        margin: 0 75px;
         margin-top: 0px;
     }
     .center_download_pc {
