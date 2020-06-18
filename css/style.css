@@ -7,8 +7,7 @@
 }
 body {
     display: block;
-    padding: 48px 24px;
-    padding: 3rem 1.5rem;
+    padding: 0;
     font-size: 16px;
     font-family: 'Bungee', cursive;
     color: white;
