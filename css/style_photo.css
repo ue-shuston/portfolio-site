@@ -565,6 +565,9 @@ nav ul li:hover {
 main {
     margin: 75px;
 }
+.side_link {
+    color: white;
+}
 .center_download_pc {
     display: none;
 }
