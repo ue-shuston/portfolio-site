@@ -566,7 +566,7 @@ main {
     margin: 75px;
 }
 .side_link {
-    color: black;
+    color: black !important;
 }
 .center_download_pc {
     display: none;
