@@ -61,7 +61,7 @@
           </h1>
         </section>
         <section id="padding_top" style="min-width:365px;>
-          <h6 style="font-size:180px"><time>0:00</time></h6>
+          <h1 class="t" style="font-size:180px"><time>0:00</time></h1>
         </section>
         <footer>
         
@@ -83,7 +83,7 @@
       }
     </script>
     <script>
-      var h1 = document.getElementsByTagName('h6')[0],
+      var timee = document.getElementsByClassName('t')[0],
        seconds = 0, minutes = 0, hours = 0,
        t;
 
@@ -98,7 +98,7 @@
            }
          }
     
-         h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "") + "" + (minutes ? (minutes > 9 ? minutes : "" + minutes) : "0") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+         timee.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "") + "" + (minutes ? (minutes > 9 ? minutes : "" + minutes) : "0") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
          timer();
         }
