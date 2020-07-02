@@ -143,6 +143,31 @@
                   </a>
                 </p>
                 </br>
+                <li>
+                  <input type="hidden" id="epic_input" value="Choco1ateCh1p"/>
+                  <span style="display:none;" class="epic_copy_notice notice" id="epic_copy_notice">Copied username to your clipboard.</span>
+                  <a href="#" onclick="return false;" id="epic_copy">Epic</a>
+                </li>
+                <li>
+                  <input type="hidden" id="origin_input" value="Choco1ateCh1p"/>
+                  <span style="display:none;" class="origin_copy_notice notice" id="origin_copy_notice">Copied username to your clipboard.</span>
+                  <a href="#" onclick="return false;" id="origin_copy">Origin</a>
+                </li>
+                <li>
+                  <input type="hidden" id="battle_input" value="Choco1ate#1846"/>
+                  <span style="display:none;" class="battle_copy_notice notice" id="battle_copy_notice">Copied username to your clipboard.</span>
+                  <a href="#" onclick="return false;" id="battle_copy">Battle.net</a>
+                </li>
+                <li>
+                  <input type="hidden" id="riot_input" value="Choco1ateCh1p"/>
+                  <span style="display:none;" class="riot_copy_notice notice" id="riot_copy_notice">Copied username to your clipboard.</span>
+                  <a href="#" onclick="return false;" id="riot_copy">Riot</a>
+                </li>
+                <li>
+                  <input type="hidden" id="uplay_input" value="Choco1ateCh1p"/>
+                  <span style="display:none;" class="uplay_copy_notice notice" id="uplay_copy_notice">Copied username to your clipboard.</span>
+                  <a href="#" onclick="return false;" id="uplay_copy">UPlay</a>
+                </li>
               </div>
             </div>
           </div>
@@ -153,4 +178,76 @@
       </div>
     </div>
   </body>
+  <script>
+    function epic_copy() {
+      var copyText = document.getElementById("epic_input");
+      copyText.type = 'text';
+      copyText.select();
+      document.execCommand("copy");
+      copyText.type = 'hidden';
+      var epic_copy_notice = document.getElementById("epic_copy_notice");
+      epic_copy_notice.style.display = 'block'
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+        epic_copy_notice.style.display = 'none'
+      }, delayInMilliseconds);
+    }
+    document.querySelector("#epic_copy").addEventListener("click", epic_copy);
+    function origin_copy() {
+      var copyText = document.getElementById("origin_input");
+      copyText.type = 'text';
+      copyText.select();
+      document.execCommand("copy");
+      copyText.type = 'hidden';
+      var origin_copy_notice = document.getElementById("origin_copy_notice");
+      origin_copy_notice.style.display = 'block'
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+        origin_copy_notice.style.display = 'none'
+      }, delayInMilliseconds);
+    }
+    document.querySelector("#origin_copy").addEventListener("click", origin_copy);          
+    function battle_copy() {
+      var copyText = document.getElementById("battle_input");
+      copyText.type = 'text';
+      copyText.select();
+      document.execCommand("copy");
+      copyText.type = 'hidden';
+      var battle_copy_notice = document.getElementById("battle_copy_notice");
+      battle_copy_notice.style.display = 'block'
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+        battle_copy_notice.style.display = 'none'
+      }, delayInMilliseconds);
+    }
+    document.querySelector("#battle_copy").addEventListener("click", battle_copy);            
+    function riot_copy() {
+      var copyText = document.getElementById("riot_input");
+      copyText.type = 'text';
+      copyText.select();
+      document.execCommand("copy");
+      copyText.type = 'hidden';
+      var riot_copy_notice = document.getElementById("riot_copy_notice");
+      riot_copy_notice.style.display = 'block'
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+        riot_copy_notice.style.display = 'none'
+      }, delayInMilliseconds);
+    }
+    document.querySelector("#riot_copy").addEventListener("click", riot_copy);            
+    function uplay_copy() {
+      var copyText = document.getElementById("uplay_input");
+      copyText.type = 'text';
+      copyText.select();
+      document.execCommand("copy");
+      copyText.type = 'hidden';
+      var uplay_copy_notice = document.getElementById("uplay_copy_notice");
+      uplay_copy_notice.style.display = 'block'
+      var delayInMilliseconds = 2000;
+      setTimeout(function() {
+        uplay_copy_notice.style.display = 'none'
+      }, delayInMilliseconds);
+    }
+    document.querySelector("#uplay_copy").addEventListener("click", uplay_copy);
+  </script>
 </html>
