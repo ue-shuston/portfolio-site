@@ -62,6 +62,30 @@
       .text-center {
         text-align:center
       }
+      section {
+        text-align: center;
+        padding: 25px 0;
+        mix-blend-mode: darken;
+      }
+      section ul {
+        margin: 10px;
+      }
+      section ul li {
+        list-style: none;
+      }
+      .epic_copy_notice,
+      .origin_copy_notice,
+      .battle_copy_notice,
+      .riot_copy_notice,
+      .uplay_copy_notice {
+        z-index: 1;
+        text-align: left;
+        position: absolute;
+        left: 50%;
+        width: 327px;
+        margin-left: -163.5px;
+        background-color: white;
+      }
     </style>
     <link rel="shortcut icon" href="images/face.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%20Mono%3A400%2C400italic%2C700%2C700italic" type="text/css">
@@ -143,31 +167,36 @@
                   </a>
                 </p>
                 </br>
-                <li>
-                  <input type="hidden" id="epic_input" value="Choco1ateCh1p"/>
-                  <span style="display:none;" class="epic_copy_notice notice" id="epic_copy_notice">Copied username to your clipboard.</span>
-                  <a href="#" onclick="return false;" id="epic_copy">Epic</a>
-                </li>
-                <li>
-                  <input type="hidden" id="origin_input" value="Choco1ateCh1p"/>
-                  <span style="display:none;" class="origin_copy_notice notice" id="origin_copy_notice">Copied username to your clipboard.</span>
-                  <a href="#" onclick="return false;" id="origin_copy">Origin</a>
-                </li>
-                <li>
-                  <input type="hidden" id="battle_input" value="Choco1ate#1846"/>
-                  <span style="display:none;" class="battle_copy_notice notice" id="battle_copy_notice">Copied username to your clipboard.</span>
-                  <a href="#" onclick="return false;" id="battle_copy">Battle.net</a>
-                </li>
-                <li>
-                  <input type="hidden" id="riot_input" value="Choco1ateCh1p"/>
-                  <span style="display:none;" class="riot_copy_notice notice" id="riot_copy_notice">Copied username to your clipboard.</span>
-                  <a href="#" onclick="return false;" id="riot_copy">Riot</a>
-                </li>
-                <li>
-                  <input type="hidden" id="uplay_input" value="Choco1ateCh1p"/>
-                  <span style="display:none;" class="uplay_copy_notice notice" id="uplay_copy_notice">Copied username to your clipboard.</span>
-                  <a href="#" onclick="return false;" id="uplay_copy">UPlay</a>
-                </li>
+                <section>
+                  <ul>
+                    <li>
+                      <input type="hidden" id="epic_input" value="Choco1ateCh1p"/>
+                      <span style="display:none;" class="epic_copy_notice notice" id="epic_copy_notice">Copied username to your clipboard.</span>
+                      <a href="#" onclick="return false;" id="epic_copy">Epic</a>
+                    </li>
+                    <li>
+                      <input type="hidden" id="origin_input" value="Choco1ateCh1p"/>
+                      <span style="display:none;" class="origin_copy_notice notice" id="origin_copy_notice">Copied username to your clipboard.</span>
+                      <a href="#" onclick="return false;" id="origin_copy">Origin</a>
+                    </li>
+                    <li>
+                      <input type="hidden" id="battle_input" value="Choco1ate#1846"/>
+                      <span style="display:none;" class="battle_copy_notice notice" id="battle_copy_notice">Copied username to your clipboard.</span>
+                      <a href="#" onclick="return false;" id="battle_copy">Battle.net</a>
+                    </li>
+                    <li>
+                      <input type="hidden" id="riot_input" value="Choco1ateCh1p"/>
+                      <span style="display:none;" class="riot_copy_notice notice" id="riot_copy_notice">Copied username to your clipboard.</span>
+                      <a href="#" onclick="return false;" id="riot_copy">Riot</a>
+                    </li>
+                    <li>
+                      <input type="hidden" id="uplay_input" value="Choco1ateCh1p"/>
+                      <span style="display:none;" class="uplay_copy_notice notice" id="uplay_copy_notice">Copied username to your clipboard.</span>
+                      <a href="#" onclick="return false;" id="uplay_copy">UPlay</a>
+                    </li>
+                  </ul>
+                </section>
+                </br>
               </div>
             </div>
           </div>
