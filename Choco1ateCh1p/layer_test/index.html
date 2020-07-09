@@ -8,11 +8,19 @@
       background-color: #0065b3;
       margin: 0;
     }
-    #imgg {
-      margin:200px auto;
-      display:block;
+    #inmg {
+      margin:0 auto;
       width:400px;
       height:auto;
+    }
+    .imga {
+      margin 200px 0;
+      display:block;
+    }
+    .imgz {
+      margin-top: -568px;
+      display: grid;
+      position: relative
     }
     .glance {
       -webkit-transform: perspective(0) rotateX(0) rotateY(0); /* Safari */
@@ -23,11 +31,11 @@
   </style>
 </head>
 <body>
-  <img class="glance imga" id="imgg" src="https://www.samuel-huston.com/images/face_bits/throat.png" width="400">
-  <img class="glance imgz" id="imgg" src="https://www.samuel-huston.com/images/face_bits/teeth_and_tongue.png" width="400">
-  <img class="glance imgz" id="imgg" src="https://www.samuel-huston.com/images/face_bits/mouth.png" width="400">
-  <img class="glance imgz" id="imgg" src="https://www.samuel-huston.com/images/face_bits/eyes.png" width="400">
-  <img class="glance imgz" id="imgg" src="https://www.samuel-huston.com/images/face_bits/pupils.png" width="400">
+  <img class="glance imga" id="inmg" src="https://www.samuel-huston.com/images/face_bits/throat.png" width="400">
+  <img class="glance imgz" id="inmg" src="https://www.samuel-huston.com/images/face_bits/teeth_and_tongue.png" width="400">
+  <img class="glance imgz" id="inmg" src="https://www.samuel-huston.com/images/face_bits/mouth.png" width="400">
+  <img class="glance imgz" id="inmg" src="https://www.samuel-huston.com/images/face_bits/eyes.png" width="400">
+  <img class="glance imgz" id="inmg" src="https://www.samuel-huston.com/images/face_bits/pupils.png" width="400">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script>
     $(document ).ready(function() {
@@ -47,8 +55,8 @@
         }
         pos[0] = Math.round(((pos[0]*2)-1)*maxRotation);
         pos[1] = Math.round(((pos[1]*-2)+1)*maxRotation);
-      $("#imgg").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
-      $("#imgg").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("img").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("img").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
       });
     });
   </script>
