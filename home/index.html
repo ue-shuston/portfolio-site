@@ -1,0 +1,630 @@
+<html lang="us-en">
+    <head>
+        <title>Home</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            *:focus {
+                outline: 0;
+            }
+            body {
+                font: caption;
+                color: #fff;
+                background-color:#333333;
+            }
+            #new-tab-open {
+                display: none;
+                float: right;
+                text-align: right;
+                padding: 0 10px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .new-tab {
+                display: none;
+                float: right;
+                padding: 0 10px;
+                margin-top: -5px;
+                text-align: right;
+                background-color:#333333;
+                width: 225px;
+            }
+            #new-tab-close {
+                float: left;
+                font-size: 30px;
+                top: 5px;
+                margin-left: -4px;
+                cursor: pointer;
+                position: relative;
+            }
+            .new-tab-open a, .new-tab-close a {
+                cursor: pointer;
+            }
+            #new-search-checkbox-off {
+              display: none;
+            }
+            #sidebar-content {
+                padding-top: 13px;
+            }
+            #sidebar-content div {
+                width: 205;
+                float: right;
+                padding-bottom: 5px;
+            }
+            #search-all-notice {
+              padding: 10px 0;
+              display: none;
+              text-align: left;
+            }
+            .center-content {
+                margin: 0;
+                position: absolute;
+                left: 50%;
+                right: auto;
+                top: 42.5%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+                min-width: 500px;
+            }
+            .bigger-button {     
+               display: inline-block;     
+               position: relative;    
+               z-index: 1;     
+               padding: 2px;     
+               margin: -2px; 
+            }
+            .search-options a {
+                padding: 4px 4.5px;
+            }
+            .search-options, .search-boxes {
+                cursor: pointer;
+                position: relative;
+                bottom: 42px;
+            }
+            #search-options, #google-search, #bing-search, #duckduckgo-search, #yahoo-search, #all-search {
+                display: none;
+            }
+            .open-search, .search-options, .search-boxes {
+                text-align: center;
+                padding: 10px 0;
+            }
+            .search-boxes form, div#all-search {
+                padding: 5px 0;
+            }
+            input[type=text] {
+                max-width: 438.5px;
+                font-size: 35;
+                color: #fff;
+                padding: 6px 7px;
+                border: none;
+                border-bottom: 1.5px solid #fff;
+                background-color:#333333;
+            }
+            button[type=submit], .all-button {
+                color: #333333;;
+                background-color: #fff;
+                font-size: 40px;
+                padding: 0px 16.5px 1.04px 15.5px;
+                border: 1.5px solid #fff;
+                border-radius: 50px;
+                cursor: pointer;
+                position: relative;
+                top: 3px;
+            }
+            button[type=submit] div {
+                background: none;
+            }
+            .search-button {
+                -webkit-transform: rotate(45deg); 
+                -moz-transform: rotate(45deg); 
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+                background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="new-tab-open">
+            <a onclick="newTabOpen()">
+                &#x3C
+            </a>   
+        </div>
+        <div class="new-tab" id="new-tab">
+            <a id="new-tab-close" onclick="newTabClose()">
+                &#x3E
+            </a>
+            <div id="sidebar-content">
+                <div id="new-tab-checkbox-div">
+                    Open results in a new tab.
+                    <input onclick="newTab()" type="checkbox" id="new-tab-checkbox">
+                </div>
+                <br>
+                <div id="new-search-checkbox-div">
+                    Search all engines.
+                    <input onclick="allSearchOn()" type="checkbox" id="new-search-checkbox-on">
+                    <input onclick="allSearchOff()" type="checkbox" id="new-search-checkbox-off">
+                </div>
+                <div id="search-all-notice">
+                    To search all engines, pop-ups must be allowed for this page. This is not for advertising purposes, and will only allow new tabs to be open with your search results.
+                </div>
+            </div>
+        </div>
+        <div class="center-content">
+            <div class="search-options" id="search-options">
+                <a onclick="googleSearch()" id="google-option">Google</a>
+                <a onclick="bingSearch()" id="bing-option">Bing</a>
+                <a onclick="yahooSearch()" id="yahoo-option">Yahoo</a>
+                <a onclick="duckDuckGoSearch()" id="duckduckgo-option">DuckDuckGo</a>
+            </div>
+            <div class="open-search" id="open-search">
+                <a class="bigger-button" onclick="openSearch()">
+                    <button type="submit" onclick="openSearch()">
+                        <div class="search-button">
+                            &#9906
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <div class="search-boxes" id="search-boxes">
+                <form id="google-search" action="https://www.google.com/search">
+                    <input autocomplete="off" type="text" name="q" placeholder="Google" id="Google">
+                    <button id="google-button" type="submit" onclick="setTimeout(clearGoogle, 1)">
+                        <div class="search-button">
+                            &#9906
+                        </div>
+                    </button>
+                </form>
+                <form id="bing-search" action="https://www.bing.com/search">
+                    <input autocomplete="off" type="text" name="q" placeholder="Bing" id="Bing">
+                    <button id="bing-button" type="submit" onclick="setTimeout(clearBing, 1)">
+                        <div class="search-button">
+                            &#9906
+                        </div>
+                    </button>
+                </form>
+                <form id="duckduckgo-search" action="https://duckduckgo.com/">
+                    <input autocomplete="off" type="text" name="q" placeholder="DuckDuckGo" id="DuckDuckGo">
+                    <button id="duckduckgo-button" type="submit" onclick="setTimeout(clearDuckDuckGo, 1)">
+                        <div class="search-button">
+                            &#9906
+                        </div>
+                    </button>
+                </form>
+                <form id="yahoo-search" action="https://search.yahoo.com/search">
+                    <input autocomplete="off" type="text" name="q" placeholder="Yahoo" id="Yahoo">
+                    <button id="yahoo-button" type="submit" onclick="setTimeout(clearYahoo, 1)">
+                        <div class="search-button">
+                            &#9906
+                        </div>
+                    </button>
+                </form>
+                <div id="all-search">
+                    <input autocomplete="off" type="text" name="q" placeholder="Search" id="All">
+                  <button class="all-button" onclick="allSearchFunction()">
+                      <div class="search-button">
+                          &#9906
+                      </div>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function newTabOpen() {
+          var x = document.getElementById("new-tab-open"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-tab"); {
+            x.style.display = "block";
+          }
+        }
+        function newTabClose() {
+          var x = document.getElementById("new-tab"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-tab-open"); {
+            x.style.display = "block";
+          }
+        }
+        function newTab() {
+          var x = document.getElementById("google-search");
+          if (x.target === "_blank") {
+            x.target = "_self";
+          } else {
+            x.target = "_blank";
+          }
+          var x = document.getElementById("bing-search");
+          if (x.target === "_blank") {
+            x.target = "_self";
+          } else {
+            x.target = "_blank";
+          }
+          var x = document.getElementById("duckduckgo-search");
+          if (x.target === "_blank") {
+            x.target = "_self";
+          } else {
+            x.target = "_blank";
+          }
+          var x = document.getElementById("yahoo-search");
+          if (x.target === "_blank") {
+            x.target = "_self";
+          } else {
+            x.target = "_blank";
+          }
+        }
+        function openSearch() {
+          var x = document.getElementById("new-tab-open"); {
+            x.style.display = "inline-block";
+          }
+          var x = document.getElementById("search-options"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("open-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("google-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+        }
+        function googleSearch() {
+          var x = document.getElementById("google-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("bing-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("duckduckgo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("yahoo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("new-search-checkbox-div"); {
+            x.style.marginTop = "0";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "inline-block";
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.disabled = false;
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "1";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "none";
+          }
+        }
+        function bingSearch() {
+          var x = document.getElementById("bing-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("google-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("duckduckgo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("yahoo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("new-search-checkbox-div"); {
+            x.style.marginTop = "0";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "inline-block";
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.disabled = false;
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "1";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "none";
+          }
+        }
+        function duckDuckGoSearch() {
+          var x = document.getElementById("duckduckgo-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("google-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("bing-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("yahoo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("new-search-checkbox-div"); {
+            x.style.marginTop = "0";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "inline-block";
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.disabled = false;
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "1";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "none";
+          }
+        }
+        function yahooSearch() {
+          var x = document.getElementById("yahoo-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("google-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("bing-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("duckduckgo-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("new-search-checkbox-div"); {
+            x.style.marginTop = "0";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "inline-block";
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.disabled = false;
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "1";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "none";
+          }
+        }
+        function allSearchOn() {
+          var x = document.getElementById("google-search"); {
+            x.target = "_blank"
+            x.style.display = "none";
+          }
+          var x = document.getElementById("bing-search"); {
+            x.target = "_blank"
+            x.style.display = "none";
+          }
+          var x = document.getElementById("duckduckgo-search"); {
+            x.target = "_blank"
+            x.style.display = "none";
+          }
+          var x = document.getElementById("yahoo-search"); {
+            x.target = "_blank"
+            x.style.display = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("google-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "1.25px solid #fff";
+          }
+          var x = document.getElementById("open-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "inline-block";
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.checked = true;
+            x.disabled = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "0.3";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "block";
+          }
+        }
+        function allSearchOff() {
+          var x = document.getElementById("google-search"); {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("bing-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("duckduckgo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("yahoo-option"); {
+            x.style.borderBottom = "none";
+          }
+          var x = document.getElementById("all-search"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-off"); {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("new-search-checkbox-on"); {
+            x.style.display = "inline-block";
+            x.checked = false;
+          }
+          var x = document.getElementById("new-tab-checkbox"); {
+            x.disabled = false;
+            x.checked = true;
+          }
+          var x = document.getElementById("new-tab-checkbox-div"); {
+            x.style.opacity = "1";
+          }
+          var x = document.getElementById("search-all-notice"); {
+            x.style.display = "none";
+          }
+        }
+        function allSearchFunction(All) {
+          var x = document.getElementById("All").value;
+          document.getElementById("Google").value = x;
+          document.getElementById("Bing").value = x;
+          document.getElementById("DuckDuckGo").value = x;
+          document.getElementById("Yahoo").value = x;
+          document.getElementById('duckduckgo-button').click();
+          document.getElementById('yahoo-button').click();
+          document.getElementById('bing-button').click();
+          document.getElementById('google-button').click();
+          var x = document.getElementById("All"); {
+            x.value = "";
+          }
+        }
+        function clearGoogle() {
+          var x = document.getElementById("Google"); {
+            x.value = "";
+          }
+        }
+        function clearBing() {
+          var x = document.getElementById("Bing"); {
+            x.value = "";
+          }
+        }
+        function clearDuckDuckGo() {
+          var x = document.getElementById("DuckDuckGo"); {
+            x.value = "";
+          }
+        }
+        function clearYahoo() {
+          var x = document.getElementById("Yahoo"); {
+            x.value = "";
+          }
+        }
+    </script>
+</html>
