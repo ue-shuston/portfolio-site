@@ -15,11 +15,37 @@
     <div>
       <div class="user_page">
         <body>
-          <img class="glance" id="moving_img" alt="The ah face, but it follows your mouse." src="https://www.samuel-huston.com/images/face_no_background.png" width="400">
+          <div id="face" class="glance" width="400">
+            <img class="layer-05" src="../images/face-layers/layer-05.png">
+            <img class="layer-04" src="../images/face-layers/layer-04.png">
+            <img class="layer-03" src="../images/face-layers/layer-03.png">
+            <img class="layer-02" src="../images/face-layers/layer-02.png">
+            <img class="layer-01" src="../images/face-layers/layer-01.png">
+          </div>
           <div class="page_text">
             <h1 class="text-center">Choco1ateCh1p</h1>
             <div class="inner_column profile_content">
               <div id="links" class="user_profile formatted">
+                </br>
+                <h2 class="text-center">Social Profiles</h2>
+                <p class="text-center">Find me @ the following social platforms.</p>
+                <p class="text-center">
+                  <a href="https://discord.gg/FwX4HFe" target="_blank" rel="nofollow noopener" aria-label="Discord server" class="social-nav-item">
+                    <img src="../images/discord.png" alt="Discord logo">
+                  </a>
+                  <a href="https://www.reddit.com/user/Choco1ateCh1p/" target="_blank" rel="nofollow noopener" aria-label="Reddit profile" class="social-nav-item">
+                    <img src="../images/reddit.png" alt="Reddit logo">
+                  </a>
+                  <a href="https://www.instagram.com/choco1atech1p_/" target="_blank" rel="nofollow noopener" aria-label="Instagram profile" class="social-nav-item">
+                    <img src="../images/instagram.png" alt="Instagram logo">
+                  </a>
+                  <a href="https://twitter.com/Choco1ateCh1p" target="_blank" rel="nofollow noopener" aria-label="Twitter profile" class="social-nav-item">
+                    <img src="../images/twitter.png" alt="Twitter logo">
+                  </a>
+                  <a href="https://www.facebook.com/pg/Choco1ateCh1p" target="_blank" rel="nofollow noopener" aria-label="Facebook page" class="social-nav-item">
+                    <img src="../images/facebook.png" alt="Facebook logo">
+                  </a>
+                </p>
                 </br>
                 <h2 class="text-center">Gaming Profiles</h2>
                 <p class="text-center">Find me @ the following game platforms.</p>
@@ -63,34 +89,14 @@
                   </a>
                 </p>
                 </br>
-                <h2 class="text-center">Video Profiles</h2>
-                <p class="text-center">Find me @ the following video platforms.</p>
-                <p class="text-center">
+                <h2 class="text-center hide">Video Profiles</h2>
+                <p class="text-center hide">Find me @ the following video platforms.</p>
+                <p class="text-center hide">
                   <a href="https://www.youtube.com/channel/UCN23zzVNVODDSgoUOsCLjWA" target="_blank" rel="nofollow noopener" aria-label="YouTube channel" class="social-nav-item">
                     <img src="../images/youtube.png" alt="YouTube logo">
                   </a>
                   <a href="https://www.twitch.tv/choco1atech1p" target="_blank" rel="nofollow noopener" aria-label="Twitch channel" class="social-nav-item">
                     <img src="../images/twitch.png" alt="Twitch logo">
-                  </a>
-                </p>
-                </br>
-                <h2 class="text-center">Social Profiles</h2>
-                <p class="text-center">Find me @ the following social platforms.</p>
-                <p class="text-center">
-                  <a href="https://discord.gg/FwX4HFe" target="_blank" rel="nofollow noopener" aria-label="Discord server" class="social-nav-item">
-                    <img src="../images/discord.png" alt="Discord logo">
-                  </a>
-                  <a href="https://www.reddit.com/r/Choco1ateCh1p/" target="_blank" rel="nofollow noopener" aria-label="Reddit profile" class="social-nav-item">
-                    <img src="../images/reddit.png" alt="Reddit logo">
-                  </a>
-                  <a href="https://www.instagram.com/choco1atech1p_/" target="_blank" rel="nofollow noopener" aria-label="Instagram profile" class="social-nav-item">
-                    <img src="../images/instagram.png" alt="Instagram logo">
-                  </a>
-                  <a href="https://twitter.com/Choco1ateCh1p" target="_blank" rel="nofollow noopener" aria-label="Twitter profile" class="social-nav-item">
-                    <img src="../images/twitter.png" alt="Twitter logo">
-                  </a>
-                  <a href="https://www.facebook.com/pg/Choco1ateCh1p" target="_blank" rel="nofollow noopener" aria-label="Facebook page" class="social-nav-item">
-                    <img src="../images/facebook.png" alt="Facebook logo">
                   </a>
                 </p>
                 </br>
@@ -107,10 +113,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document ).ready(function() {
-      var x = 500;
-      var y = 500;
-      var maxRotation = 20; 
-      var perspective = 2000;
+      var x = 0.5;
+      var y = 0.5;
+      var maxRotation = 18; 
+      var perspective = 1000;
       $(document).mousemove(function(event){
         var pos = [event.pageX / document.body.clientWidth, event.pageY / document.body.clientHeight];
         for (var i=0;i < pos.length;i++) {
@@ -123,8 +129,8 @@
         }
         pos[0] = Math.round(((pos[0]*2)-1)*maxRotation);
         pos[1] = Math.round(((pos[1]*-2)+1)*maxRotation);
-      $("#moving_img").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
-      $("#moving_img").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("#face").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("#face").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
       });
     });
     function epic_copy() {
