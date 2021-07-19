@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <title>Face Test</title>
   <style>
-    html {
-      background-color:#0065b3;
-    }
     body {
+      background-color: #0065b3;
       margin: 0;
     }
     img {
-      margin:200px 2680px;
+      margin:200px auto;
       display:block;
       width:400px;
       height:auto;
@@ -25,14 +23,14 @@
   </style>
 </head>
 <body>
-  <img class="glance" id="img" src="https://www.samuel-huston.com/images/face_no_background.png" width="400">
+  <img class="glance" src="https://www.samuel-huston.com/images/face_no_background.png" width="400">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script>
     $(document ).ready(function() {
-      var x = 0.5;
-      var y = 0.5;
-      var maxRotation = 18; 
-      var perspective = 1000;
+      var x = 500;
+      var y = 500;
+      var maxRotation = 20; 
+      var perspective = 2000;
       $(document).mousemove(function(event){
         var pos = [event.pageX / document.body.clientWidth, event.pageY / document.body.clientHeight];
         for (var i=0;i < pos.length;i++) {
