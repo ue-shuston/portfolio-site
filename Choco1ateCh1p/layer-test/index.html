@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Face Test</title>
+  <style>
+    body {
+      background-color: #0065b3;
+      margin: 0;
+    }
+    div {
+      margin:200px auto;
+      width:400px;
+    }
+    .glance {
+      -webkit-transform: perspective(0) rotateX(0) rotateY(0); /* Safari */
+      transform: perspective(0) rotateX(0) rotateY(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+    }
+    img {
+      display:block;
+      height:auto;
+    }
+    .layer-05 {
+      transform: translateZ(-22px);
+    }
+    .layer-04 {
+      margin: -570px 0;
+      transform: translateZ(-11px);
+    }
+    .layer-03 {
+      margin: -570px 0;
+    }
+    .layer-02 {
+      margin: -570px 0;
+      transform: translateZ(15px);
+    }
+    .layer-01 {
+      margin: -570px 0;
+      transform: translateZ(35px);
+    }
+  </style>
+</head>
+<body>
+  <div class="glance" width="400">
+    <img class="layer-05" src="https://samuel-huston.com/images/face-layers/layer-05.png">
+    <img class="layer-04" src="https://samuel-huston.com/images/face-layers/layer-04.png">
+    <img class="layer-03" src="https://samuel-huston.com/images/face-layers/layer-03.png">
+    <img class="layer-02" src="https://samuel-huston.com/images/face-layers/layer-02.png">
+    <img class="layer-01" src="https://samuel-huston.com/images/face-layers/layer-01.png">
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script>
+    $(document ).ready(function() {
+      var x = 500;
+      var y = 500;
+      var maxRotation = 20; 
+      var perspective = 2000;
+      $(document).mousemove(function(event){
+        var pos = [event.pageX / document.body.clientWidth, event.pageY / document.body.clientHeight];
+        for (var i=0;i < pos.length;i++) {
+          if (pos[i]<0) {
+            pos[i] = 0;
+          }
+          if (pos[i]>1) {
+            pos[i] = 1;
+          }
+        }
+        pos[0] = Math.round(((pos[0]*2)-1)*maxRotation);
+        pos[1] = Math.round(((pos[1]*-2)+1)*maxRotation);
+      $("div").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("div").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      });
+    });
+  </script>
+</body>
+</html>
