@@ -9,7 +9,7 @@ html {
 }
 body {
   background-color:#0065b3;
-  margin:0
+  margin:0;
 }
 .user_page {
   color:#ffffff;
@@ -56,11 +56,7 @@ img {
 .text-center {
   text-align:center
 }
-.epic_copy_notice,
-.origin_copy_notice,
-.battle_copy_notice,
-.riot_copy_notice,
-.uplay_copy_notice {
+.notice {
   z-index: 1;
   text-align: left;
   position: absolute;
