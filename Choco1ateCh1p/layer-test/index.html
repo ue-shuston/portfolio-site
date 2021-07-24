@@ -71,7 +71,7 @@
         pos[0] = Math.round(((pos[0]*2)-1)*maxRotation);
         pos[1] = Math.round(((pos[1]*-2)+1)*maxRotation);
       $("div").css("transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
-      $("div").css("-webkit-transform", "perspective(" + perspective +    ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
+      $("div").css("-webkit-transform", "perspective(" + perspective + ") rotateX("+pos[1]+"deg) rotateY("+pos[0]+"deg)");
       });
     });
   </script>
