@@ -58,7 +58,7 @@ body {
     -webkit-transition: all 0.2s cubic-bezier(0.43, 0.43, 0.43, 0.43);
     transition: all 0.2s cubic-bezier(0.43, 0.43, 0.43, 0.43);
 }
-nav ul li:hover {
+nav ul li a:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     -webkit-transition: all 0.1s cubic-bezier(0.43, 0.43, 0.43, 0.43);
