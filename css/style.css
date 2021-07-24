@@ -58,7 +58,7 @@ body {
     -webkit-transition: all 0.2s cubic-bezier(0.43, 0.43, 0.43, 0.43);
     transition: all 0.2s cubic-bezier(0.43, 0.43, 0.43, 0.43);
 }
-nav ul li a:hover {
+nav ul li:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     -webkit-transition: all 0.1s cubic-bezier(0.43, 0.43, 0.43, 0.43);
@@ -94,7 +94,7 @@ nav ul li a {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-nav ul li a:focus, nav ul li a:hover {
+nav ul li:focus, nav ul li:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
