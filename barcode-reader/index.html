@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)http://172.17.109.33/Inventory/Scan -->
-<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scan - DCSS</title>
+    <title>Scan</title>
     <link href="./index_files/style.css" rel="stylesheet">
 
     <script src="./index_files/modernizr.js"></script>
@@ -18,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://192.168.17.10/">DCSS</a>
+                <a class="navbar-brand" href="#">Site</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://192.168.17.10/Inventory">Inventory</a></li>
+                    <li><a href="#">Link</a></li>
                 </ul>
             </div>
         </div>
@@ -97,7 +96,11 @@
 
         <hr>
         <footer>
-            <p>© 2022 - Samuel Huston</p>
+            <p>
+                © 
+                <span id="year"></span> 
+                - Samuel Huston
+            </p>
         </footer>
     </div>
 
@@ -107,7 +110,9 @@
 
     <script src="./index_files/script.js"></script>
 
-    
+    <script>
+        $('#year').html(new Date().getFullYear());
+    </script>
 
-
-</body></html>
+</body>
+</html>
