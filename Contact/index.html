@@ -93,8 +93,15 @@
       </br>
       </br>
       <footer>
-        <p class="text-center">©2022 Samuel Huston</p>
+        <p class="text-center">
+          ©
+          <span id="year"></span> 
+          Samuel Huston
+        </p>
       </footer>
     </div>
   </body>
+  <script>
+    $('#year').html(new Date().getFullYear());
+  </script>
 </html>
