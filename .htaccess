@@ -1,5 +1,5 @@
 ErrorDocument 404 /pages/error_404.html
 
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://www.{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
