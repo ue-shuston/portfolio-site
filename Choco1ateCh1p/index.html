@@ -13,7 +13,7 @@
   <body>
     <div>
       <div class="user_page">
-        <body>
+        <div>
           <div id="face" class="glance" width="400">
             <img class="layer-05" src="../images/face-layers/layer-05.png">
             <img class="layer-04" src="../images/face-layers/layer-04.png">
@@ -25,7 +25,7 @@
             <h1 class="text-center">Choco1ateCh1p</h1>
             <div class="inner_column profile_content">
               <div id="links" class="user_profile formatted">
-                </br>
+                <br />
                 <h2 class="text-center hide">Social Profiles</h2>
                 <p class="text-center hide">Find me on the following social platforms.</p>
                 <p class="text-center hide">
@@ -45,7 +45,7 @@
                     <img src="../images/facebook.png" alt="Facebook logo">
                   </a>
                 </p>
-                </br>
+                <br />
                 <h2 class="text-center hide">Gaming Profiles</h2>
                 <p class="text-center">Find me on the following platforms.</p>
                 <p class="text-center">
@@ -87,7 +87,7 @@
                   </a>
                   <span style="display:none;" class="notice" id="notice">Copied username to your clipboard.</span>
                 </p>
-                </br>
+                <br />
                 <h2 class="text-center hide">Video Profiles</h2>
                 <p class="text-center hide">Find me on the following video platforms.</p>
                 <p class="text-center hide">
@@ -98,18 +98,24 @@
                     <img src="../images/twitch.png" alt="Twitch logo">
                   </a>
                 </p>
-                </br>
+                <br />
               </div>
             </div>
           </div>
         </div>
         <footer>
-          <p class="text-center user_page">©2022 Choco1ateCh1p</p>
+          <p class="text-center user_page">
+            <span id="year"></span>
+            Choco1ateCh1p
+          </p>
         </footer>
       </div>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $('#year').html(new Date().getFullYear());
+  </script>
   <script>
     $(document ).ready(function() {
       var x = 0.5;
