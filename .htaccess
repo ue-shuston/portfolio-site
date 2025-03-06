@@ -1,4 +1,4 @@
-ErrorDocument 404 /pages/error_404.html
+ErrorDocument 404 /error_404
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\. [NC]
