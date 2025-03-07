@@ -1,3 +1,3 @@
 [samuelhuston.com](https://samuelhuston.com)
 
-Just my personal portfolio site. 
+Just my old personal portfolio site.
